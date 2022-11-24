@@ -24,8 +24,6 @@ class SearchPresenter: SearchPresentationLogic {
     func presentData(response: Search.Model.Response.ResponseType) {
 
         switch response {
-        case .some:
-            print("presenter .some")
         case .presentTracks(let searchResults):
             print("presenter .presentTracks")
             let cells =  searchResults?.results.map({ (track) in
@@ -33,6 +31,8 @@ class SearchPresenter: SearchPresentationLogic {
             }) ?? []
             let searchViewModel = SearchViewModel.init(cells: cells)
             viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayTracks(searchViewModel: searchViewModel))
+        case .presentFooterView:
+            viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.gisplayFooterView)
         }
     }
     
@@ -40,6 +40,7 @@ class SearchPresenter: SearchPresentationLogic {
         return SearchViewModel.Cell.init(iconUrlString: track.artworkUrl100,
                                          trackName: track.trackName,
                                          collectionName: track.collectionName ?? "",
-                                         artistName: track.artistName)
+                                         artistName: track.artistName,
+                                         previewUrl: track.previewUrl)
     }
 }

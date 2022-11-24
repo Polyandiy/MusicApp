@@ -28,6 +28,9 @@
 		CE74846C292DEF960011D95C /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74846B292DEF960011D95C /* SearchResponseModel.swift */; };
 		CEC72553292E4E5A003FABE9 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC72552292E4E5A003FABE9 /* TrackCell.xib */; };
 		CEC72555292E4E9C003FABE9 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC72554292E4E9C003FABE9 /* TrackCell.swift */; };
+		CED2679F292F4DCB0072AAD3 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2679E292F4DCB0072AAD3 /* FooterView.swift */; };
+		CED267A2292F58DB0072AAD3 /* TableDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED267A1292F58DB0072AAD3 /* TableDetailView.xib */; };
+		CED267A4292F58EA0072AAD3 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED267A3292F58EA0072AAD3 /* TrackDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		CE74846B292DEF960011D95C /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
 		CEC72552292E4E5A003FABE9 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		CEC72554292E4E9C003FABE9 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		CED2679E292F4DCB0072AAD3 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		CED267A1292F58DB0072AAD3 /* TableDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableDetailView.xib; sourceTree = "<group>"; };
+		CED267A3292F58EA0072AAD3 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		E8A6BD9DA36E41149881D5A3 /* Pods-MusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +96,8 @@
 		CE1BE2CF292E0D93001E0F36 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				CED267A0292F58860072AAD3 /* TrackDetailView */,
+				CED2679D292F4DB90072AAD3 /* FooterView */,
 				CEC72551292E4E47003FABE9 /* Cell */,
 				CE1BE2F5292E1B41001E0F36 /* SearchViewController.storyboard */,
 				CE1BE2F1292E106F001E0F36 /* SearchViewController.swift */,
@@ -105,6 +113,7 @@
 		CE1BE2E3292E0F2A001E0F36 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CED2679C292E58610072AAD3 /* Models */,
 				CE1BE2CD292E04D4001E0F36 /* NetworkService.swift */,
 			);
 			path = Services;
@@ -155,7 +164,6 @@
 				CE748467292DD1390011D95C /* MainTabBarController.swift */,
 				CE748469292DD3EA0011D95C /* SearchMusicViewController.swift */,
 				CE748457292DD10B0011D95C /* ViewController.swift */,
-				CE74846B292DEF960011D95C /* SearchResponseModel.swift */,
 				CE748459292DD10B0011D95C /* Main.storyboard */,
 				CE74845E292DD10C0011D95C /* LaunchScreen.storyboard */,
 				CE74845C292DD10C0011D95C /* Assets.xcassets */,
@@ -171,6 +179,31 @@
 				CEC72554292E4E9C003FABE9 /* TrackCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CED2679C292E58610072AAD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE74846B292DEF960011D95C /* SearchResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CED2679D292F4DB90072AAD3 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				CED2679E292F4DCB0072AAD3 /* FooterView.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
+		CED267A0292F58860072AAD3 /* TrackDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				CED267A1292F58DB0072AAD3 /* TableDetailView.xib */,
+				CED267A3292F58EA0072AAD3 /* TrackDetailView.swift */,
+			);
+			path = TrackDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +270,7 @@
 				CEC72553292E4E5A003FABE9 /* TrackCell.xib in Resources */,
 				CE74845D292DD10C0011D95C /* Assets.xcassets in Resources */,
 				CE1BE2F6292E1B41001E0F36 /* SearchViewController.storyboard in Resources */,
+				CED267A2292F58DB0072AAD3 /* TableDetailView.xib in Resources */,
 				CE74845B292DD10B0011D95C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +329,7 @@
 				CE748458292DD10B0011D95C /* ViewController.swift in Sources */,
 				CE748454292DD10B0011D95C /* AppDelegate.swift in Sources */,
 				CE1BE2F0292E1035001E0F36 /* SearchInteractor.swift in Sources */,
+				CED2679F292F4DCB0072AAD3 /* FooterView.swift in Sources */,
 				CEC72555292E4E9C003FABE9 /* TrackCell.swift in Sources */,
 				CE1BE2F3292E106F001E0F36 /* SearchViewController.swift in Sources */,
 				CE74846C292DEF960011D95C /* SearchResponseModel.swift in Sources */,
@@ -304,6 +339,7 @@
 				CE1BE2EE292E1035001E0F36 /* SearchModels.swift in Sources */,
 				CE748456292DD10B0011D95C /* SceneDelegate.swift in Sources */,
 				CE1BE2EB292E1035001E0F36 /* SearchPresenter.swift in Sources */,
+				CED267A4292F58EA0072AAD3 /* TrackDetailView.swift in Sources */,
 				CE1BE2CE292E04D4001E0F36 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
