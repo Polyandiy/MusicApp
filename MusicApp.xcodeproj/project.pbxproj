@@ -29,7 +29,7 @@
 		CEC72553292E4E5A003FABE9 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC72552292E4E5A003FABE9 /* TrackCell.xib */; };
 		CEC72555292E4E9C003FABE9 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC72554292E4E9C003FABE9 /* TrackCell.swift */; };
 		CED2679F292F4DCB0072AAD3 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2679E292F4DCB0072AAD3 /* FooterView.swift */; };
-		CED267A2292F58DB0072AAD3 /* TableDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED267A1292F58DB0072AAD3 /* TableDetailView.xib */; };
+		CED267A2292F58DB0072AAD3 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED267A1292F58DB0072AAD3 /* TrackDetailView.xib */; };
 		CED267A4292F58EA0072AAD3 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED267A3292F58EA0072AAD3 /* TrackDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		CEC72552292E4E5A003FABE9 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		CEC72554292E4E9C003FABE9 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		CED2679E292F4DCB0072AAD3 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
-		CED267A1292F58DB0072AAD3 /* TableDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableDetailView.xib; sourceTree = "<group>"; };
+		CED267A1292F58DB0072AAD3 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		CED267A3292F58EA0072AAD3 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		E8A6BD9DA36E41149881D5A3 /* Pods-MusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,7 +200,7 @@
 		CED267A0292F58860072AAD3 /* TrackDetailView */ = {
 			isa = PBXGroup;
 			children = (
-				CED267A1292F58DB0072AAD3 /* TableDetailView.xib */,
+				CED267A1292F58DB0072AAD3 /* TrackDetailView.xib */,
 				CED267A3292F58EA0072AAD3 /* TrackDetailView.swift */,
 			);
 			path = TrackDetailView;
@@ -270,7 +270,7 @@
 				CEC72553292E4E5A003FABE9 /* TrackCell.xib in Resources */,
 				CE74845D292DD10C0011D95C /* Assets.xcassets in Resources */,
 				CE1BE2F6292E1B41001E0F36 /* SearchViewController.storyboard in Resources */,
-				CED267A2292F58DB0072AAD3 /* TableDetailView.xib in Resources */,
+				CED267A2292F58DB0072AAD3 /* TrackDetailView.xib in Resources */,
 				CE74845B292DD10B0011D95C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

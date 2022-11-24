@@ -10,23 +10,23 @@ import UIKit
 protocol SearchDisplayLogic: AnyObject
 {
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData)
-
+    
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
     var interactor: SearchBusinessLogic?
     var router: (NSObjectProtocol & SearchRoutingLogic & SearchDataPassing)?
-
+    
     @IBOutlet weak var table: UITableView!
-
+    
     let searchController = UISearchController(searchResultsController: nil)
     private var searchViewModel = SearchViewModel.init(cells: [])
     private var timer: Timer?
     
     private lazy var footerView = FooterView()
-
+    
     // MARK: - Setup Clean Code Design Pattern
-
+    
     private func setup() {
         let viewController =         self
         let interactor =             SearchInteractor()
@@ -38,16 +38,16 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         presenter.viewController =   viewController
         router.viewController =      viewController
     }
-
+    
     // MARK: - Routing
-
-
-
+    
+    
+    
     // MARK: - View lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        doSomething()
+        //        doSomething()
         setup()
         setupSearchBar()
         setupTableView()
@@ -64,9 +64,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         table.register(UINib(nibName: "TrackCell", bundle: nil), forCellReuseIdentifier: TrackCell.reuseID)
         table.tableFooterView = footerView
     }
-
+    
     // MARK: - display view model from SearchPresenter
-
+    
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
         //nameTextField.text = viewModel.name
         switch viewModel {
@@ -81,7 +81,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     }
 }
 
-//MARK: - UITableViewDelegate, UITableViewDataSource
+
+   //MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -90,8 +91,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: TrackCell.reuseID, for: indexPath) as! TrackCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrackCell.reuseID, for: indexPath) as! TrackCell
         let cellViewModel = searchViewModel.cells[indexPath.row]
         //cell.trackImageView.backgroundColor = .blue
         cell.set(viewModel: cellViewModel)
@@ -113,7 +113,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return searchViewModel.cells.count  > 0 ? 0 : 200
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellViewModel = searchViewModel.cells[indexPath.row]
+        
+        let window = UIApplication.shared.keyWindow
+        let trackDetailView = Bundle.main.loadNibNamed("TrackDetailView", owner: self)?.first as! TrackDetailView
+        window?.addSubview(trackDetailView)
+        trackDetailView.frame  = (window?.frame(forAlignmentRect: UIScreen.main.bounds))!
+        trackDetailView.set(viewModel: cellViewModel)
+    }
 }
+
 
 //MARK: - UISearchBarDelegate
 
