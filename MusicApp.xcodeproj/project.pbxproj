@@ -17,6 +17,7 @@
 		CE1BE2F3292E106F001E0F36 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE2F1292E106F001E0F36 /* SearchViewController.swift */; };
 		CE1BE2F6292E1B41001E0F36 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1BE2F5292E1B41001E0F36 /* SearchViewController.storyboard */; };
 		CE1BE2F9292E1FB4001E0F36 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE2F8292E1FB4001E0F36 /* UIViewController + Storyboard.swift */; };
+		CE6C44442931FC72000C4FD0 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C44432931FC72000C4FD0 /* Nib.swift */; };
 		CE748454292DD10B0011D95C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748453292DD10B0011D95C /* AppDelegate.swift */; };
 		CE748456292DD10B0011D95C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748455292DD10B0011D95C /* SceneDelegate.swift */; };
 		CE748458292DD10B0011D95C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748457292DD10B0011D95C /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		CE1BE2F1292E106F001E0F36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE1BE2F5292E1B41001E0F36 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		CE1BE2F8292E1FB4001E0F36 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
+		CE6C44432931FC72000C4FD0 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		CE748450292DD10B0011D95C /* MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE748453292DD10B0011D95C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE748455292DD10B0011D95C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				CE1BE2F8292E1FB4001E0F36 /* UIViewController + Storyboard.swift */,
 				CED267A5292F831B0072AAD3 /* CMTime + Extension.swift */,
+				CE6C44432931FC72000C4FD0 /* Nib.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6C44442931FC72000C4FD0 /* Nib.swift in Sources */,
 				CE74846A292DD3EA0011D95C /* SearchMusicViewController.swift in Sources */,
 				CE1BE2F9292E1FB4001E0F36 /* UIViewController + Storyboard.swift in Sources */,
 				CE748458292DD10B0011D95C /* ViewController.swift in Sources */,
