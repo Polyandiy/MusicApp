@@ -18,12 +18,14 @@ protocol TrackCellViewModelProtocol {
 class TrackCell: UITableViewCell {
      
     static let reuseID = "TrackCell"
-    var cell: SearchViewModel.Cell
+    var cell: SearchViewModel.Cell?
     
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
+    @IBOutlet weak var addTrackButton: UIButton!
+    
     
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +37,19 @@ class TrackCell: UITableViewCell {
     }
     
     func set(viewModel: SearchViewModel.Cell) {
-        
         self.cell = viewModel
+        
+        let savedTracks = UserDefaults.standard.savedTracks()
+        let hasFavouriteTracks = savedTracks.first(where: {
+            $0.trackName == self.cell?.trackName && $0.artistName == self.cell?.artistName
+        }) != nil
+        
+        if hasFavouriteTracks {
+            addTrackButton.isHidden = true
+        } else {
+            addTrackButton.isHidden = false
+        }
+        
         trackNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         collectionNameLabel.text = viewModel.collectionName
@@ -46,10 +59,15 @@ class TrackCell: UITableViewCell {
     }
     
     @IBAction func addTrackAction(_ sender: Any) {
-//        print("add track")
-//        let defaults = UserDefaults.standard
-//        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: SearchViewModel.Cell.self, requiringSecureCoding: false) {
-//            defaults.set(savedData, forKey: "tracks")
-//        }
+        let defaults = UserDefaults.standard
+        guard let cell = cell else { return }
+        addTrackButton.isHidden = true
+        var listOfTracks = defaults.savedTracks()
+        listOfTracks.append(cell)
+        
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfTracks, requiringSecureCoding: false) {
+            defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
+            print("успешно")
+        }
     }
 }
