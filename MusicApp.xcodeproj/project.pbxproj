@@ -18,6 +18,7 @@
 		CE1BE2F6292E1B41001E0F36 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1BE2F5292E1B41001E0F36 /* SearchViewController.storyboard */; };
 		CE1BE2F9292E1FB4001E0F36 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BE2F8292E1FB4001E0F36 /* UIViewController + Storyboard.swift */; };
 		CE6C44442931FC72000C4FD0 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C44432931FC72000C4FD0 /* Nib.swift */; };
+		CE6C444629333983000C4FD0 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C444529333983000C4FD0 /* Library.swift */; };
 		CE748454292DD10B0011D95C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748453292DD10B0011D95C /* AppDelegate.swift */; };
 		CE748456292DD10B0011D95C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748455292DD10B0011D95C /* SceneDelegate.swift */; };
 		CE748458292DD10B0011D95C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748457292DD10B0011D95C /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 		CE1BE2F5292E1B41001E0F36 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		CE1BE2F8292E1FB4001E0F36 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 		CE6C44432931FC72000C4FD0 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
+		CE6C444529333983000C4FD0 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		CE748450292DD10B0011D95C /* MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE748453292DD10B0011D95C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE748455292DD10B0011D95C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				CE748467292DD1390011D95C /* MainTabBarController.swift */,
 				CE748469292DD3EA0011D95C /* SearchMusicViewController.swift */,
 				CE748457292DD10B0011D95C /* ViewController.swift */,
+				CE6C444529333983000C4FD0 /* Library.swift */,
 				CE748459292DD10B0011D95C /* Main.storyboard */,
 				CE74845E292DD10C0011D95C /* LaunchScreen.storyboard */,
 				CE74845C292DD10C0011D95C /* Assets.xcassets */,
@@ -347,6 +350,7 @@
 				CE1BE2EE292E1035001E0F36 /* SearchModels.swift in Sources */,
 				CE748456292DD10B0011D95C /* SceneDelegate.swift in Sources */,
 				CE1BE2EB292E1035001E0F36 /* SearchPresenter.swift in Sources */,
+				CE6C444629333983000C4FD0 /* Library.swift in Sources */,
 				CED267A4292F58EA0072AAD3 /* TrackDetailView.swift in Sources */,
 				CE1BE2CE292E04D4001E0F36 /* NetworkService.swift in Sources */,
 			);

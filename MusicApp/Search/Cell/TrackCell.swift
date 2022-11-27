@@ -18,6 +18,7 @@ protocol TrackCellViewModelProtocol {
 class TrackCell: UITableViewCell {
      
     static let reuseID = "TrackCell"
+    var cell: SearchViewModel.Cell
     
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var trackNameLabel: UILabel!
@@ -33,7 +34,9 @@ class TrackCell: UITableViewCell {
         trackImageView.image = nil
     }
     
-    func set(viewModel: TrackCellViewModelProtocol) {
+    func set(viewModel: SearchViewModel.Cell) {
+        
+        self.cell = viewModel
         trackNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         collectionNameLabel.text = viewModel.collectionName
@@ -42,4 +45,11 @@ class TrackCell: UITableViewCell {
         trackImageView.sd_setImage(with: url, completed: nil)
     }
     
+    @IBAction func addTrackAction(_ sender: Any) {
+//        print("add track")
+//        let defaults = UserDefaults.standard
+//        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: SearchViewModel.Cell.self, requiringSecureCoding: false) {
+//            defaults.set(savedData, forKey: "tracks")
+//        }
+    }
 }
