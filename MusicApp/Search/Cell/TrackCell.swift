@@ -16,7 +16,7 @@ protocol TrackCellViewModelProtocol {
 }
 
 class TrackCell: UITableViewCell {
-     
+    
     static let reuseID = "TrackCell"
     var cell: SearchViewModel.Cell?
     
@@ -67,7 +67,6 @@ class TrackCell: UITableViewCell {
         
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfTracks, requiringSecureCoding: false) {
             defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
-            print("успешно")
         }
     }
 }

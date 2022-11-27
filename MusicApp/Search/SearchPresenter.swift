@@ -18,11 +18,9 @@ protocol SearchPresentationLogic {
 
 class SearchPresenter: SearchPresentationLogic {
     weak var viewController: SearchDisplayLogic?
-
-    // MARK: Parse and calc respnse from SearchInteractor and send simple view model to SearchViewController to be displayed
-
+    
     func presentData(response: Search.Model.Response.ResponseType) {
-
+        
         switch response {
         case .presentTracks(let searchResults):
             print("presenter .presentTracks")

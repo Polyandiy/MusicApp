@@ -41,10 +41,22 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        doSomething()
         setup()
         setupSearchBar()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let keyWindow = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .map({$0 as? UIWindowScene})
+            .compactMap({$0})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
+        let tabBarVC = keyWindow?.rootViewController as? MainTabBarController
+        tabBarVC?.trackDetailView.delegate = self
     }
     
     private func setupSearchBar() {
@@ -62,7 +74,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     // MARK: - display view model from SearchPresenter
     
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
-        //nameTextField.text = viewModel.name
         switch viewModel {
         case .displayTracks(let searchViewModel):
             print("viewController .displayTracks")
@@ -76,7 +87,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
 }
 
 
-   //MARK: - UITableViewDelegate, UITableViewDataSource
+//MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -110,15 +121,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = searchViewModel.cells[indexPath.row]
-//        let window = UIApplication.shared.keyWindow
-//        let trackDetailView: TrackDetailView = TrackDetailView.loadNib()
-//        trackDetailView.frame  = (window?.frame(forAlignmentRect: UIScreen.main.bounds))!
-//        trackDetailView.set(viewModel: cellViewModel)
-//        trackDetailView.delegate = self
         self.tabBarDelegate?.maximizeTrackDetailController(viewModel: cellViewModel)
     }
 }
-
 
 //MARK: - UISearchBarDelegate
 
@@ -135,7 +140,7 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 //MARK: - TrackMovingDelegate
-    
+
 extension SearchViewController: TrackMovingDelegate {
     
     private func getTrack(isForwardTrack: Bool) -> SearchViewModel.Cell? {
@@ -166,7 +171,5 @@ extension SearchViewController: TrackMovingDelegate {
     func moveForwardToNextTrack() -> SearchViewModel.Cell? {
         return getTrack(isForwardTrack: true)
     }
-    
-    
 }
 

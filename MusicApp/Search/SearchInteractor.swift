@@ -14,7 +14,7 @@ import UIKit
 
 protocol SearchBusinessLogic {
     func makeRequest(request: Search.Model.Request.RequestType)
-
+    
 }
 
 protocol SearchDataStore {
@@ -22,14 +22,14 @@ protocol SearchDataStore {
 }
 
 class SearchInteractor: SearchBusinessLogic {
-
+    
     var networkService = NetworkService()
     var presenter: SearchPresentationLogic?
     var worker: SearchWorker?
     //var name: String = ""
-
+    
     // MARK: Do something (and send response to SearchPresenter)
-
+    
     func makeRequest(request: Search.Model.Request.RequestType) {
         if worker == nil {
             worker = SearchWorker()
@@ -44,7 +44,3 @@ class SearchInteractor: SearchBusinessLogic {
         }
     }
 }
-
-//extension SearchInteractor: SearchDataStore {
-//
-//}

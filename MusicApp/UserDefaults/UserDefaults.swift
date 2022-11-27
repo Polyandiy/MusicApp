@@ -18,5 +18,4 @@ extension UserDefaults {
         guard let decodedTracks = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTracks) as? [SearchViewModel.Cell] else { return [] }
         return decodedTracks
     }
-    
 }

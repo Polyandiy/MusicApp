@@ -29,7 +29,8 @@ class MainTabBarController: UITabBarController {
         tabBar.tintColor = #colorLiteral(red: 1, green: 0, blue: 0.3764705882, alpha: 1)
         tabBar.backgroundColor = .white
         
-        let library = Library()
+        var library = Library()
+        library.tabBarDelegate = self
         let hostVC = UIHostingController(rootView: library)
         hostVC.tabBarItem.image = UIImage(systemName: "music.note.list")
         hostVC.tabBarItem.title = "Library"
@@ -37,7 +38,6 @@ class MainTabBarController: UITabBarController {
         viewControllers = [
             generateVC(rootVC: searchVC, image: UIImage(systemName: "magnifyingglass")!, title: "Search"),
             hostVC]
-//            generateVC(rootVC: hostVC, image: UIImage(systemName: "music.note.list")!, title: "Library")]
         setupTrackDetailView()
         
         searchVC.tabBarDelegate = self
@@ -86,11 +86,11 @@ extension MainTabBarController: MainTabBarControllerDelegate {
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 1,
                        animations: {
-                        self.view.layoutIfNeeded()
-                        self.tabBar.alpha = 0
-                        self.trackDetailView.miniTrackView.alpha = 0
-                        self.trackDetailView.maximizedStackView.alpha = 1
-                       },
+            self.view.layoutIfNeeded()
+            self.tabBar.alpha = 0
+            self.trackDetailView.miniTrackView.alpha = 0
+            self.trackDetailView.maximizedStackView.alpha = 1
+        },
                        completion: nil)
         guard let viewModel = viewModel else { return }
         self.trackDetailView.set(viewModel: viewModel)
@@ -106,10 +106,10 @@ extension MainTabBarController: MainTabBarControllerDelegate {
                        usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 1,
                        animations: {
-                        self.view.layoutIfNeeded()
-                        self.tabBar.alpha = 1
-                        self.trackDetailView.miniTrackView.alpha = 1
-                        self.trackDetailView.maximizedStackView.alpha = 0
+            self.view.layoutIfNeeded()
+            self.tabBar.alpha = 1
+            self.trackDetailView.miniTrackView.alpha = 1
+            self.trackDetailView.maximizedStackView.alpha = 0
         },
                        completion: nil)
     }
